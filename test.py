@@ -4,7 +4,7 @@ import unittest
 class OperationTest(unittest.TestCase):
 
     def testAddition(self):
-        self.assertEqual(addition(2,3,4),9)
+        self.assertEqual(addition(2,3,4),90)
         self.assertEqual(addition(2),2)        
         self.assertEqual(addition(),0)
         self.assertEqual(addition(10,20,-9,-1),20)
