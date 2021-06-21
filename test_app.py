@@ -19,5 +19,5 @@ class OperationTest(unittest.TestCase):
 
     def testUniqueInArray(self):
         self.assertEqual(uniqueInArray([1,2,3,4,1,2,3,4,5]),5)
-        self.assertEqual(uniqueInArray([1,2,3,4,1,2,3,4]),0)      
+        self.assertEqual(uniqueInArray([1,2,3,4,1,2,3,4]),-1)      
         self.assertEqual(uniqueInArray([1,2,3,4,1,2,3,4,5,6,5]),6)  
