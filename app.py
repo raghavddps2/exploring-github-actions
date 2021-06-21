@@ -1,3 +1,5 @@
+from collections import Counter
+from typing import Coroutine
 def addition(*numbers):
     sum = 0
     for i in numbers:
@@ -13,4 +15,14 @@ def multiplication(*numbers):
         product *= i
 
     return product
+
+def uniqueInArray(numbers):
+
+    count = Counter(numbers)
+    for i,j in count.items():
+        if j == 1:
+            return i
+    
+    return -1
+    
 

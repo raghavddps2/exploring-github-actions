@@ -1,4 +1,4 @@
-from app import addition, multiplication
+from app import addition, multiplication, uniqueInArray
 import unittest
 
 class OperationTest(unittest.TestCase):
@@ -16,3 +16,8 @@ class OperationTest(unittest.TestCase):
         self.assertEqual(multiplication(),0)
         self.assertEqual(multiplication(10,20,-9,-1),1800)
         self.assertEqual(multiplication(2,3,4,5),120)
+
+    def testUniqueInArray(self):
+        self.assertEqual(uniqueInArray([1,2,3,4,1,2,3,4,5]),5)
+        self.assertEqual(uniqueInArray([1,2,3,4,1,2,3,4]),0)      
+        self.assertEqual(uniqueInArray([1,2,3,4,1,2,3,4,5,6,5]),6)  
