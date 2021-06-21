@@ -1,20 +1,17 @@
 name: GitHub Actions Demo
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
-
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+      - name: Install Python 3
+        uses: actions/setup-python@v1
         with:
-          python-version: ${{ matrix.python-version }}
-      - name: running Test Cases
+          python-version: 3.6
+      - name: Install dependencies
         run: |
-          python3 test.py
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run tests with pytest
+        run: pytest 
